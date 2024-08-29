@@ -7,8 +7,8 @@ Version 1.1.0
 
 ## History
 
-See file `HISTORY`.
+See https://github.com/OneLuaPro/LPeg/blob/master/HISTORY.
 
 ## License
 
-See file `LICENSE`.
+See https://github.com/OneLuaPro/LPeg/blob/master/LICENSE.
