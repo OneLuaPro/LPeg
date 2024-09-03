@@ -105,7 +105,7 @@ set(INSTALL_DATAROOTDIR
 set(INSTALL_TOP_CDIR
   ${INSTALL_LIBDIR}/lua/${liblua_VERSION_MAJOR}.${liblua_VERSION_MINOR})
 set(INSTALL_TOP_LDIR
-  ${LIBLUA_INSTALLDIR}/share/lua/${liblua_VERSION_MAJOR}.${liblua_VERSION_MINOR})
+  ${INSTALL_DATAROOTDIR}/lua/${liblua_VERSION_MAJOR}.${liblua_VERSION_MINOR})
 
 # ------------------------------------------------------------------------------
 # Report to user
