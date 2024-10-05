@@ -115,7 +115,4 @@ message(STATUS "C compiler flags: ${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_${CMAKE_BUILD
 # ------------------------------------------------------------------------------
 # Dive into subdirs
 add_subdirectory(src)
-
-# ------------------------------------------------------------------------------
-# Install docs
-install(DIRECTORY doc/ DESTINATION ${INSTALL_DOCDIR})	# "/" omits leading dir
+add_subdirectory(doc)
