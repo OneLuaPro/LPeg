@@ -25,7 +25,7 @@
 # ------------------------------------------------------------------------------
 
 install(
-  FILES doc.css lpeg.html re.html lpeg-128.gif test.lua
+  FILES doc.css index.html re.html lpeg-128.gif test.lua
   DESTINATION ${INSTALL_DOCDIR}
   COMPONENT doc
 )
