@@ -27,17 +27,20 @@ add_library(lpeg SHARED)
 # setup lua include directory
 target_include_directories(lpeg PRIVATE ${LIBLUA_INCLUDEDIR})
 
+# plattform-independend sources
+target_sources(lpeg PRIVATE lpcap.c lpcode.c lpcset.c lpprint.c lptree.c lpvm.c)
+
 # setup platform-specific sources, compile and linker options
 if(WIN32 AND NOT MinGW)
-  target_compile_options(lpeg PRIVATE /D_WINDLL /D_WIN32 /D_CRT_SECURE_NO_WARNINGS)
-  #target_link_options(lpeg PRIVATE /LIBPATH:${LIBLUA_LIBDIR} liblua.lib iphlpapi.lib ws2_32.lib)
-  target_link_options(lpeg PRIVATE /LIBPATH:${LIBLUA_LIBDIR} liblua.lib ws2_32.lib)
+  target_compile_definitions(lpeg PRIVATE
+    LUA_BUILD_AS_DLL LUA_LIB
+    _WINDLL _WIN32 _CRT_SECURE_NO_WARNINGS
+  )
+  target_link_directories(lpeg PRIVATE ${LIBLUA_LIBDIR})
+  target_link_libraries(lpeg PRIVATE liblua ws2_32)
 else()
   message(FATAL_ERROR "Not yet fully implemented.")
 endif()
-
-# plattform-independend sources
-target_sources(lpeg PRIVATE lpcap.c lpcode.c lpcset.c lpprint.c lptree.c lpvm.c)
 
 # Install
 install(TARGETS lpeg RUNTIME DESTINATION ${INSTALL_TOP_CDIR})

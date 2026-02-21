@@ -1,15 +1,3 @@
-// For OneLuaPro
-#ifdef _WINDLL
-#include <winsock2.h>	// https://stackoverflow.com/questions/1372480
-#include <windows.h>
-#define DLL __declspec(dllexport)
-#else
-// #include <unistd.h>
-#define DLL //empty
-#endif
-// For OneLuaPro
-
-
 #include <ctype.h>
 #include <limits.h>
 #include <string.h>
@@ -1393,14 +1381,7 @@ static struct luaL_Reg metareg[] = {
 };
 
 
-// For OneLuaPro
-#ifdef _WINDLL
-DLL luaopen_lpeg (lua_State *L);
-DLL luaopen_lpeg (lua_State *L) {
-#else
-int luaopen_lpeg (lua_State *L);
-int luaopen_lpeg (lua_State *L) {
-#endif
+LUALIB_API int luaopen_lpeg (lua_State *L) {
   luaL_newmetatable(L, PATTERN_T);
   lua_pushnumber(L, MAXBACK);  /* initialize maximum backtracking */
   lua_setfield(L, LUA_REGISTRYINDEX, MAXSTACKIDX);
