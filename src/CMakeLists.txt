@@ -1,6 +1,7 @@
 # MIT License
 #
-# Copyright (c) 2024 Kritzel Kratzel.
+# Copyright (c) 2007-2023 Lua.org, PUC-Rio.
+# Copyright (c) 2024-2026 The OneLuaPro project authors.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in 
